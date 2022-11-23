@@ -1,8 +1,26 @@
 const mongoose = require("mongoose")
 
-// Require the models,  Example: (-- const Book = require("../models/Book.model") --)
+// Require the models
+const User = require("../models/User.model")
+const Post = require("../models/Post.model")
+const Comment = require("../models/Comment.model")
 
 const MONGO_URI = "mongodb://localhost:27017/project3"
+
+//User seeds
+const post = [
+   {
+      creator: {},
+      title: "How I improved my self-confidence through reading",
+      description: "Lorem ipsum",
+      category: ['Self Confidence'],
+      type: ['Knowledge'],
+      created: Date.now,
+      upvotes: 0,
+      downvotes: 0,
+      commentsId: []
+   }
+]
 
 
 const createSeeds = async function () {
