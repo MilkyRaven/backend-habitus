@@ -12,19 +12,15 @@ const postSchema = new Schema(
       type: String,
       required: [true, "You can't send an empty post"],
     },
-    category: {
+    categories: [{
       type: String,
       required: [true, "You must select a category."],
       enum: ['Mindfulness', 'Finances', 'Health', 'Tech', 'Self Confidence']
-    },
+    }],
     type: {
         type: String,
         required: [true, "You must select a type of post"],
         enum: ['Meeting', 'Knowledge']
-    },
-    created: {
-        type: Date,
-        default: Date.now
     },
     upvotes: {
         type: Number,
